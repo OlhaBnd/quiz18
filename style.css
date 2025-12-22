@@ -1,0 +1,28 @@
+/* Базові налаштування */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+#answer-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.answer-btn {
+    width: 48%;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid black;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+}
+
