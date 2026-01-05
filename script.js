@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ===== Таймер =====
     function startTimer() {
-
+        timerDisplay.classList.remove('warning', 'danger');
         // Скидаємо таймер
         timer = 15;
         timerDisplay.innerText = `Час: ${timer}`;
@@ -169,7 +169,12 @@ document.addEventListener('DOMContentLoaded', () => {
         interval = setInterval(() => {
             timer--;
             timerDisplay.innerText = `Час: ${timer}`;
-
+            
+            if (timer<=5){
+                timerDisplay.classList.add('danger');
+            }else if(timer<10){
+                timerDisplay.classList.add('warning')
+            }
             // Якщо час закінчився — переходимо далі
             if (timer <= 0) {
                 clearInterval(interval);
