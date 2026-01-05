@@ -45,7 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultText = document.querySelector('.result-text');
     const questionText = document.querySelector('#question-text');
     const answersContainer = document.querySelector('#answers-container');
-
+    const progressDisplay = document.querySelector("#progress");
+    
     // ===== Змінні для логіки гри =====
 
     let questionIndex = 0; // номер поточного запитання
@@ -57,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ===== Функція показу запитання =====
     function showQuestion(question) {
-
+        progressDisplay.innerText = `${questionIndex + 1} / ${questions.length}`;
         // Зупиняємо попередній таймер (якщо він був)
         clearInterval(interval);
 
@@ -99,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ===== Перевірка відповіді =====
-function checkAnswer(button, i) {
+   function checkAnswer(button, i) {
 
     const correctIndex = questions[questionIndex].correct;
 
@@ -120,7 +121,6 @@ function checkAnswer(button, i) {
 
     setTimeout(nextQuestion, 1200);
 }
-
 
     // ===== Показ результату =====
     function showResult() {
