@@ -99,25 +99,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ===== Перевірка відповіді =====
-    function checkAnswer(button, i) {
+function checkAnswer(button, i) {
 
-        // Якщо індекс відповіді співпадає з правильним
-        if (i == questions[questionIndex].correct) {
-            score++; // збільшуємо бали
-            scoreDisplay.innerText = `Бали: ${score}`;
-            button.classList.add('correct'); // зелений колір
-        } else {
-            button.classList.add('wrong'); // червоний колір
+    const correctIndex = questions[questionIndex].correct;
+
+    document.querySelectorAll('.answer-btn').forEach((btn, index) => {
+        btn.disabled = true;
+
+        if (index === correctIndex) {
+            btn.classList.add('correct');
         }
+    });
 
-        // Блокуємо всі кнопки, щоб не можна було клікати ще раз
-        document.querySelectorAll('.answer-btn').forEach(btn => {
-            btn.disabled = true;
-        });
-
-        // Через 1 секунду переходимо до наступного запитання
-        setTimeout(nextQuestion, 1000);
+    if (i === correctIndex) {
+        score++;
+        scoreDisplay.innerText = `Бали: ${score}`;
+    } else {
+        button.classList.add('wrong');
     }
+
+    setTimeout(nextQuestion, 1200);
+}
+
 
     // ===== Показ результату =====
     function showResult() {
