@@ -8,8 +8,10 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+
 }
-#answer-container {
+
+#answers-container {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -17,12 +19,39 @@ body {
 }
 
 .answer-btn {
-    width: 48%;
-    padding: 15px;
-    border-radius: 8px;
-    border: 1px solid black;
+    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
-    margin: 5px;
+    width: 48%;
 }
 
+/* Завдання 2 - Підготовка CSS (Візуальні стани) */
+.hide {
+    display: none;
+}
+
+.correct {
+    background-color: rgb(0, 90, 0);
+    color: white;
+}
+
+.wrong {
+    background-color: rgb(189, 0, 0);
+    color: white;
+}
+
+#start-btn,
+#restart-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #000000;
+    color: white;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
